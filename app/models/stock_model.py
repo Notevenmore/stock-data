@@ -106,9 +106,9 @@ class StockModel:
             self.repository.ihsg['Close_ihsg'] = self.repository.ihsg['Close']
             self.orderbook_repository.orderbook[stock_name]['date'] = pd.to_datetime(self.orderbook_repository.orderbook[stock_name]['date'], format="mixed").astype(config.astype_date_data)
 
-            self.data[stock_name] = pd.merge(self.repository.stock[stock_name], self.processed_data_repository.processed_news[stock_name], on='date', how='inner', validate="one_to_one")
-            self.data[stock_name] = pd.merge(self.data[stock_name], self.repository.ihsg[['date', 'Close_ihsg']], on='date', how='inner', validate="one_to_one")
-            self.data[stock_name] = pd.merge(self.data[stock_name], self.orderbook_repository.orderbook[stock_name][['date', 'value', 'offer_value', 'offer_volume', 'bid_value', 'bid_volume', 'foreign_sell', 'foreign_buy']], on='date', how='inner', validate="one_to_one")
+            self.data[stock_name] = pd.merge(self.repository.stock[stock_name], self.processed_data_repository.processed_news[stock_name], on='date', how='left', validate="one_to_one")
+            self.data[stock_name] = pd.merge(self.data[stock_name], self.repository.ihsg[['date', 'Close_ihsg']], on='date', how='left', validate="one_to_one")
+            self.data[stock_name] = pd.merge(self.data[stock_name], self.orderbook_repository.orderbook[stock_name][['date', 'value', 'offer_value', 'offer_volume', 'bid_value', 'bid_volume', 'foreign_sell', 'foreign_buy']], on='date', how='left', validate="one_to_one")
             
             numeric_cols = self.data[stock_name].select_dtypes('number').columns
             self.data[stock_name][numeric_cols] = self.data[stock_name][numeric_cols].fillna(0)

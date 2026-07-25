@@ -118,6 +118,8 @@ class StockRepository:
 
                     # Parabolic Stop and Reversal
                     self.stock[stock_name]['psar'] = self.__compute_psar(self.stock[stock_name])
+
+                    # df['return_ihsg'] = compute_return(df['Close_ihsg'])
     
     def __compute_rsi(self, series, period = 14):
         delta = series.diff()
