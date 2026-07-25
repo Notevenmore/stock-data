@@ -160,6 +160,10 @@ python -m test.workflow
     python main.py
 ```
 
+13. Untuk Modifikasi Model di Ml-Server, gunakan playground untuk menguji atau menambahkan model. hal ini dapat dilakukan dengan menyalin file .ipynb yang ada, lalu modifikasi file untuk menambah variasi model baru. Atau jika ingin memperbarui model yang sudah ada, lakukan perubahan di file .ipynb yang sudah ada.
+
+14. Jika model yang dibangun sudah pas, salin kode yang berkaitan tersebut di class suatu model di project ml-server, sesuaikan untuk mendapatkan hasil yang optimal
+
 ## Arsitektur Sistem
 
 ```text
