@@ -1,38 +1,28 @@
-import socketio
+from flask import Flask
+from socket_client import SocketClient
+from threading import Thread
 
-sio = socketio.Client(
-    reconnection=False,
-)
+app = Flask(__name__)
 
-@sio.event
-def connect():
-    print("Connected")
+def start_socket_client():
+    client = SocketClient()
+    client.start()
 
-@sio.event
-def disconnect():
-    print("Disconnected")
+@app.route("/")
+def index():
+    return "ML Server Running"
 
-@sio.on("news_updated")
-def news_updated(data):
-    print(data)
-
-@sio.on("orderbook_updated")
-def orderbook_updated(data):
-    print(data)
-
-@sio.on("process_data_updated")
-def process_data_updated(data):
-    print(data)
-
-@sio.on("stock_updated")
-def stock_updated(data):
-    print(data)
-
-try:
-    sio.connect(
-        "http://127.0.0.1:5000",
-        transports=["polling"]
+if __name__ == "__main__":
+    socket_thread = Thread(
+        target=start_socket_client,
+        daemon=True
     )
-    sio.wait()
-except Exception as e:
-    print("Error: ", e)
+
+    socket_thread.start()
+    
+    app.run(
+        host="0.0.0.0",
+        port=6000,
+        debug=False,
+        load_dotenv=True,
+    )
