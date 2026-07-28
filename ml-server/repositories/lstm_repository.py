@@ -1,8 +1,8 @@
-from .preprocessing_repository import PreprocessingRepository
+from repositories import PreprocessingRepository
 
 from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.layers import LSTM, Dense, Dropout
-from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
 from tensorflow.keras.losses import Huber
 from sklearn.preprocessing import StandardScaler
 
@@ -22,7 +22,10 @@ class LSTMRepository(PreprocessingRepository):
         self.model = {}
         self.result = {}
         self.features = {}
+        self.metadata = {}
         self.is_scaler_already_built = {}
+        self.train_size = {}
+        self.test_size = {}
 
         self.init_standard_scaler_stocks()
 
@@ -55,6 +58,9 @@ class LSTMRepository(PreprocessingRepository):
 
         self.x_train[stock_name], self.y_train[stock_name] = self.create_sequences(self.x_train[stock_name], self.y_train[stock_name], window_size=10)
         self.x_test[stock_name], self.y_test[stock_name] = self.create_sequences(self.x_test[stock_name], self.y_test[stock_name], window_size=10)
+
+        self.train_size[stock_name] = len(self.x_train[stock_name])
+        self.test_size[stock_name] = len(self.x_test[stock_name])
 
         self.__run_model(stock_name)
 
@@ -95,16 +101,18 @@ class LSTMRepository(PreprocessingRepository):
 
     def __run_model(self, stock_name):
         self.__training_model(stock_name)
-        mse, mae, result = self.__predict_data(stock_name)
+        mse, mae, r2, accuracy, result = self.__predict_data(stock_name)
         self.result[stock_name] = {
             "mse": mse,
             "mae": mae,
-            "result": result
+            "r2": r2,
+            "result": result,
+            "accuracy": accuracy
         }
 
-        self.__save_metadata(stock_name, mse, mae, result)
+        self.__save_metadata(stock_name, mse, mae, r2, accuracy, result)
 
-    def __save_metadata(self, stock_name, mse, mae, result):
+    def __save_metadata(self, stock_name, mse, mae, r2, accuracy, result):
         path = f"data/models/{stock_name}"
         metadata_path = f"{path}/lstm-metadata.json"
         os.makedirs(path, exist_ok=True)
@@ -113,14 +121,34 @@ class LSTMRepository(PreprocessingRepository):
                 metadata = json.load(file)
 
             metadata["result"] = result.to_dict(orient="records")
+            metadata["metrics"]["latest"] = {
+                "mse": float(mse),
+                "mae": float(mae),
+                "r2": float(r2),
+                "direction_accuracy": float(accuracy)
+            }
+            count = metadata["evaluation_count"]
 
-            previous_mse = metadata["avg_mse"]
-            previous_mae = metadata["avg_mae"]
+            metadata["metrics"]["average"]["mse"] = float(
+                ((metadata["metrics"]["average"]["mse"] * count) + mse)
+                / (count + 1)
+            )
 
-            metadata["avg_mse"] = float(((previous_mse * metadata["evaluation_count"]) + mse) / (metadata["evaluation_count"] + 1))
-            metadata["avg_mae"] = float(((previous_mae * metadata["evaluation_count"]) + mae) / (metadata["evaluation_count"] + 1))
-            metadata["latest_mse"] = float(mse)
-            metadata["latest_mae"] = float(mae)
+            metadata["metrics"]["average"]["mae"] = float(
+                ((metadata["metrics"]["average"]["mae"] * count) + mae)
+                / (count + 1)
+            )
+
+            metadata["metrics"]["average"]["r2"] = float(
+                ((metadata["metrics"]["average"]["r2"] * count) + r2)
+                / (count + 1)
+            )
+
+            metadata["metrics"]["average"]["direction_accuracy"] = float(
+                ((metadata["metrics"]["average"]["direction_accuracy"] * count) + accuracy)
+                / (count + 1)
+            )
+
             metadata["evaluation_count"] += 1
             metadata["latest_evaluated_at"] = datetime.now().strftime("%Y-%m-%d %H-%M-%S")
         else:
@@ -128,14 +156,29 @@ class LSTMRepository(PreprocessingRepository):
                 "stock": stock_name,
                 "model": "LSTM",
                 "window_size": 10,
-                "features": list(self.features[stock_name]),
+                "dataset": {
+                    "train_size": self.train_size[stock_name],
+                    "test_size": self.test_size[stock_name],
+                    "feature_count": len(self.features[stock_name]), 
+                    "features": list(self.features[stock_name]),
+                },
                 "trained_at": datetime.now().strftime("%Y-%m-%d %H-%M-%S"),
                 "latest_evaluated_at": datetime.now().strftime("%Y-%m-%d %H-%M-%S"),
                 "evaluation_count": 1,
-                "latest_mse": float(mse),
-                "latest_mae": float(mae),
-                "avg_mse": float(mse),
-                "avg_mae": float(mae),
+                "metrics": {
+                    "latest": {
+                        "mse": float(mse),
+                        "mae": float(mae),
+                        "r2": float(r2),
+                        "direction_accuracy": float(accuracy)
+                    },
+                    "average": {
+                        "mse": float(mse),
+                        "mae": float(mae),
+                        "r2": float(r2),
+                        "direction_accuracy": float(accuracy)
+                    },
+                },
                 "result": result.to_dict(orient="records")
             }
 
@@ -145,6 +188,28 @@ class LSTMRepository(PreprocessingRepository):
                 file,
                 indent=4
             )
+
+    def load_metadatas(self):
+        for _, stock in self.stock_list.iterrows():
+            self.__load_metadata(stock['code'])
+
+    def __load_metadata(self, stock_name):
+        path = f"data/models/{stock_name}"
+        metadata_path = f"{path}/lstm-metadata.json"
+        
+        if os.path.exists(metadata_path):
+            with open(metadata_path, "r") as file:
+                metadata = json.load(file)
+                self.metadata[stock_name] = metadata
+                self.result[stock_name] = {
+                    "mse": metadata["metrics"]["latest"]["mse"],
+                    "mae": metadata["metrics"]["latest"]["mae"],
+                    "r2": metadata["metrics"]["latest"]["r2"],
+                    "result": pd.DataFrame(metadata["result"]),
+                    "accuracy": metadata["metrics"]["latest"]["direction_accuracy"]
+                }
+        else:
+            self.metadata[stock_name] = None
 
     def __training_model(self, stock_name):
         path = f"data/models/{stock_name}"
@@ -196,12 +261,27 @@ class LSTMRepository(PreprocessingRepository):
 
         mse = mean_squared_error(actual, pred)
         mae = mean_absolute_error(actual, pred)
+        r2 = r2_score(actual, pred)
+
+        accuracy = accuracy_score(
+            (actual.flatten() > 0).astype(int),
+            (pred.flatten() > 0).astype(int)
+        )
 
         result = pd.DataFrame({
             "actual": actual.flatten(),
-            "prediction": pred.flatten()
+            "prediction": pred.flatten(),
+            "actual_direction": (actual.flatten() > 0).astype(int),
+            "prediction_direction": (pred.flatten() > 0).astype(int)
         })
 
-        return mse, mae, result
-    
+        return mse, mae, r2, accuracy, result
 
+    def predict_next_day(self, stock_name):
+        latest_data = self.x_test[stock_name][-1]
+        latest_data = np.expand_dims(latest_data, axis=0)
+
+        pred = self.model[stock_name].predict(latest_data)
+        pred = self.y_standard_scaler[stock_name].inverse_transform(pred)
+
+        return float(pred[0][0])
