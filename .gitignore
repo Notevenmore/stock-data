@@ -6,5 +6,7 @@ app/data/Models
 .env
 __pycache__
 venv
-
+**/*.json
+**/*.joblib
+**/*.keras
 celery/celerybeat-schedule
