@@ -1,7 +1,12 @@
 import socketio
+from models import PredictModel
 
 class SocketClient:
     def __init__(self):
+        self.is_news_updated = False
+        self.is_orderbook_updated = False
+        self.is_processed_news_updated = False
+        self.is_stock_updated = False
         self.sio = socketio.Client(
             reconnection=False,
         )
@@ -18,19 +23,41 @@ class SocketClient:
 
         @self.sio.on("news_updated")
         def news_updated(data):
-            print(data)
+            self.is_news_updated = True
+            self.check_process_and_run()
 
         @self.sio.on("orderbook_updated")
         def orderbook_updated(data):
-            print(data)
+            self.is_orderbook_updated = True
+            self.check_process_and_run()
 
         @self.sio.on("process_data_updated")
         def process_data_updated(data):
-            print(data)
+            self.is_processed_news_updated = True
+            self.check_process_and_run()
 
         @self.sio.on("stock_updated")
         def stock_updated(data):
-            print(data)
+            self.is_stock_updated = True
+            self.check_process_and_run()
+
+    def check_process_and_run(self):
+        if self.is_news_updated and self.is_orderbook_updated and self.is_processed_news_updated and self.is_stock_updated:
+            model = PredictModel()
+            model.analyze_all()
+            next_price = model.next_price
+
+            self.sio.emit(
+                "prediction_updated",
+                {
+                    "data": next_price
+                }
+            )
+
+            self.is_news_updated = False
+            self.is_orderbook_updated = False
+            self.is_processed_news_updated = False
+            self.is_stock_updated = False
 
     def start(self):
         try:

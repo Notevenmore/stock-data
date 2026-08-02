@@ -41,7 +41,8 @@ class PreprocessingRepository:
         response = requests.get(f"{self.url}/stock")
         json = response.json()
         data = json.get('data')
-        self.stock_list = pd.DataFrame(data)
+        stocks = data.get('stocks')
+        self.stock_list = pd.DataFrame(stocks)
 
     def init_data(self):
         for _, stock in self.stock_list.iterrows():

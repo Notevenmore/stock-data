@@ -24,20 +24,22 @@ class PredictModel:
 
     def init_preprocessing_repository(self):
         self.preprocessing_repository = PreprocessingRepository()
+        self.preprocessing_repository.init_data()
 
     def init_gru_repository(self):
-        self.gru_repository = GRURepository()
+        self.gru_repository = GRURepository(self.preprocessing_repository)
 
     def init_lstm_repository(self):
-        self.lstm_repository = LSTMRepository()
+        self.lstm_repository = LSTMRepository(self.preprocessing_repository)
 
     def init_nann_repository(self):
-        self.nann_repository = NANNRepository()
+        self.nann_repository = NANNRepository(self.preprocessing_repository)
 
     def init_rfr_repository(self):
-        self.rfr_repository = RFRRepository()
+        self.rfr_repository = RFRRepository(self.preprocessing_repository)
 
     def analyze_all(self):
+        self.init_preprocessing_repository()
         self.init_gru_repository()
         self.init_lstm_repository()
         self.init_nann_repository()

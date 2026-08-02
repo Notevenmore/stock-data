@@ -1,5 +1,3 @@
-from repositories import PreprocessingRepository
-
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, accuracy_score
 
@@ -11,9 +9,13 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 
-class RFRRepository(PreprocessingRepository):
-    def __init__(self):
-        super().__init__()
+class RFRRepository:
+    def __init__(self, pre_processing_repository):
+        self.x_train = pre_processing_repository.x_train.copy()
+        self.x_test= pre_processing_repository.x_test.copy()
+        self.y_train = pre_processing_repository.y_train.copy()
+        self.y_test = pre_processing_repository.y_test.copy()
+        self.stock_list = pre_processing_repository.stock_list
         self.model = {}
         self.result = {}
         self.features = {}
@@ -197,9 +199,8 @@ class RFRRepository(PreprocessingRepository):
         return mse, mae, r2, accuracy, result
 
     def predict_next_day(self, stock_name):
-        latest_data = self.x_test[stock_name][-1]
-        latest_data = np.expand_dims(latest_data, axis=0)
+        latest_data = self.x_test[stock_name][-1:]
 
         pred = self.model[stock_name].predict(latest_data)
 
-        return float(pred[0][0])
+        return float(pred[0])

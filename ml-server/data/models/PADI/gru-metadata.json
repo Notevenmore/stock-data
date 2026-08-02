@@ -1,0 +1,1918 @@
+{
+    "stock": "PADI",
+    "model": "GRU",
+    "window_size": 10,
+    "dataset": {
+        "train_size": 1258,
+        "test_size": 308,
+        "feature_count": 39,
+        "features": [
+            "Close",
+            "Close_ihsg",
+            "High",
+            "Low",
+            "Open",
+            "Volume",
+            "bid_value",
+            "bid_volume",
+            "ema100",
+            "ema20",
+            "ema5",
+            "ema50",
+            "foreign_buy",
+            "foreign_sell",
+            "lb_bolinger",
+            "macd_hist",
+            "macd_line",
+            "macd_signal",
+            "mb_bolinger",
+            "mean_sentiment_score_negative",
+            "mean_sentiment_score_positive",
+            "offer_value",
+            "offer_volume",
+            "percent_bolinger",
+            "psar",
+            "rsi",
+            "sma100",
+            "sma20",
+            "sma5",
+            "sma50",
+            "stoch_rsi_d%",
+            "stoch_rsi_k%",
+            "ub_bolinger",
+            "value",
+            "wma100",
+            "wma20",
+            "wma5",
+            "wma50",
+            "foreign_net"
+        ]
+    },
+    "trained_at": "2026-08-01 02-32-58",
+    "latest_evaluated_at": "2026-08-02 22-33-04",
+    "evaluation_count": 6,
+    "metrics": {
+        "latest": {
+            "mse": 77.56731655352263,
+            "mae": 5.594310411215796,
+            "r2": -0.18760213933162895,
+            "direction_accuracy": 0.5714285714285714
+        },
+        "average": {
+            "mse": 77.56731655352263,
+            "mae": 5.594310411215795,
+            "r2": -0.18760213933162895,
+            "direction_accuracy": 0.5714285714285713
+        }
+    },
+    "result": [
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.07655327022075653,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.08552654087543488,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.08838649094104767,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.08581103384494781,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.031875163316726685,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.0420866459608078,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.17997558414936066,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -0.33434292674064636,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -0.433311402797699,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -0.34545350074768066,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -0.2532493770122528,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.1137525886297226,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": 0.06038878858089447,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.8202487230300903,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.1349155306816101,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.07792796194553375,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.2842497229576111,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.07151463627815247,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.11604531109333038,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": -0.04250079393386841,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 5.0,
+            "prediction": -0.1257619559764862,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.30975162982940674,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -0.1045258417725563,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -0.023305952548980713,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.04710620641708374,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.07155878841876984,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.0723768025636673,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.07348291575908661,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.07659189403057098,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.07814641296863556,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.07730646431446075,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.0771293044090271,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.07585978507995605,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -4.0,
+            "prediction": 0.0770125687122345,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.07222846150398254,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.07110776007175446,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.07144695520401001,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.07144875824451447,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.07050862908363342,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.0686381608247757,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.06569835543632507,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.0598469078540802,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.05931785702705383,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.06015603244304657,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.07304815948009491,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.02845016121864319,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.10479320585727692,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.059839896857738495,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -0.167572021484375,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.0604509636759758,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.5466383099555969,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.1415443867444992,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.12148476392030716,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.45196712017059326,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.3394398093223572,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.0366925448179245,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -0.013280242681503296,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.013514310121536255,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.04353770613670349,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.09079526364803314,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.09069333970546722,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.09011860191822052,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.0512220561504364,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.043350979685783386,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.2327607423067093,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.0870765894651413,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.5908900499343872,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 1.5782276391983032,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 2.0113019943237305,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 5.0,
+            "prediction": 1.9909969568252563,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 5.0,
+            "prediction": 1.8825677633285522,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 6.0,
+            "prediction": 1.7788861989974976,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 6.0,
+            "prediction": 1.5587949752807617,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 1.4711251258850098,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": 0.9336570501327515,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -8.0,
+            "prediction": 2.876641273498535,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": 1.545329213142395,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -7.0,
+            "prediction": 1.4021954536437988,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 1.0288654565811157,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -4.0,
+            "prediction": 0.7973755598068237,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.7776913046836853,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -5.0,
+            "prediction": 0.7396491169929504,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.9202748537063599,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.46412110328674316,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": 0.21902652084827423,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": 0.05977426469326019,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.07581295073032379,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.0644451305270195,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.4330146908760071,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.15341486036777496,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -7.0,
+            "prediction": 0.07571527361869812,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.08070366084575653,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.08002172410488129,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.08378182351589203,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.08371813595294952,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": 0.0834210067987442,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -9.0,
+            "prediction": -0.08032737672328949,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -8.0,
+            "prediction": 0.21975581347942352,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": 0.16439013183116913,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.08115877211093903,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 6.0,
+            "prediction": 0.0703599601984024,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -8.0,
+            "prediction": 0.06395934522151947,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.027589857578277588,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.035376012325286865,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 2.0,
+            "prediction": 0.07921679317951202,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.028922513127326965,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.026981636881828308,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 6.0,
+            "prediction": 0.12602026760578156,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": 0.034425511956214905,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 9.0,
+            "prediction": -0.0579804852604866,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -10.0,
+            "prediction": -0.5307281017303467,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -0.45142698287963867,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -7.0,
+            "prediction": -1.2082219123840332,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -0.6699773669242859,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": -0.3903076648712158,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": -0.1813795268535614,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": -0.09524960070848465,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.02853885293006897,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 1.0,
+            "prediction": -0.009107515215873718,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 5.0,
+            "prediction": 0.027096644043922424,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.8150782585144043,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": 0.03178033232688904,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.07475148141384125,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -4.0,
+            "prediction": 0.0993197113275528,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.09929110109806061,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.09844781458377838,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.0899467021226883,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.07570111751556396,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.13288091123104095,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.031503692269325256,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.06242553889751434,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.14173094928264618,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": 0.5505682229995728,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 2.0,
+            "prediction": -0.006173446774482727,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.09872420132160187,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -5.0,
+            "prediction": 0.09742294251918793,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.09812034666538239,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.09906204044818878,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 2.0,
+            "prediction": 0.09915648400783539,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.09894867241382599,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": -0.012436822056770325,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.016877159476280212,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.0006946325302124023,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.08318914473056793,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.01054912805557251,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": 0.03233693540096283,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": -0.19703514873981476,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": -0.5866404175758362,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 31.0,
+            "prediction": 0.6845137476921082,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 42.0,
+            "prediction": -0.2938031852245331,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -10.0,
+            "prediction": -1.4595836400985718,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.21025218069553375,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -9.0,
+            "prediction": 0.20499198138713837,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 5.0,
+            "prediction": 0.0242907851934433,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 4.0,
+            "prediction": 0.039898887276649475,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.5687429308891296,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -23.0,
+            "prediction": -0.9553598761558533,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -9.0,
+            "prediction": -2.538173198699951,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.6318278312683105,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.0,
+            "prediction": -3.1488373279571533,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -0.2337988168001175,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 38.0,
+            "prediction": -0.22381755709648132,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -20.0,
+            "prediction": -0.17727196216583252,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -13.0,
+            "prediction": 0.042420148849487305,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.8723832964897156,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.036585211753845215,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -3.0,
+            "prediction": 0.12005193531513214,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 14.000000000000002,
+            "prediction": -0.20404499769210815,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -2.0886220932006836,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 13.0,
+            "prediction": -8.24269962310791,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 14.000000000000002,
+            "prediction": -2.0147387981414795,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 38.0,
+            "prediction": -8.809123039245605,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -2.812318801879883,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -13.0,
+            "prediction": -2.3265745639801025,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 23.0,
+            "prediction": -6.523473739624023,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -2.0218422412872314,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -10.068146705627441,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.714672565460205,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.6461451053619385,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.5754219889640808,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.5713515281677246,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.5937426686286926,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.516666054725647,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.446340560913086,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.5057017803192139,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -19.0,
+            "prediction": -1.5277096033096313,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -18.0,
+            "prediction": -0.1685647815465927,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -16.0,
+            "prediction": -0.03359211981296539,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -0.09030495584011078,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -14.0,
+            "prediction": -1.434476613998413,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -0.2299850434064865,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -13.0,
+            "prediction": 0.08031125366687775,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -17.0,
+            "prediction": -0.2720732092857361,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -14.999999999999998,
+            "prediction": -1.4373186826705933,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": -2.161660671234131,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -7.273993015289307,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 30.0,
+            "prediction": -4.687938213348389,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 12.0,
+            "prediction": -2.1702497005462646,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -8.001385688781738,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 9.0,
+            "prediction": -1.7463465929031372,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -3.5492172241210938,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -9.46427059173584,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 31.0,
+            "prediction": -1.7559908628463745,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.999999999999998,
+            "prediction": -2.0508925914764404,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 10.0,
+            "prediction": -10.474991798400879,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -16.0,
+            "prediction": -6.58119535446167,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -6.556093215942383,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -21.0,
+            "prediction": -1.257904291152954,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.7869547009468079,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -13.0,
+            "prediction": -0.8901293873786926,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 6.0,
+            "prediction": -0.8901293873786926,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.999999999999998,
+            "prediction": -9.403559684753418,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.09654838591814041,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": -1.345558524131775,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -10.733820915222168,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -9.462150573730469,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -0.4246286153793335,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -2.0000765323638916,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -1.9658972024917603,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 7.999999999999999,
+            "prediction": -7.069842338562012,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -2.175218105316162,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -8.445130348205566,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": 0.05430954694747925,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": -0.335551917552948,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 6.0,
+            "prediction": -0.43210679292678833,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -7.0,
+            "prediction": -2.2099337577819824,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -8.47409725189209,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -7.094179630279541,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 11.0,
+            "prediction": -2.1158523559570312,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -1.9150136709213257,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 29.0,
+            "prediction": -7.856293201446533,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": -2.8382081985473633,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -9.979290962219238,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -0.9089950323104858,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -2.0207107067108154,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -2.2393500804901123,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": -1.7974350452423096,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 6.0,
+            "prediction": -2.1416454315185547,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": -7.173454761505127,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -7.0,
+            "prediction": -0.7527092695236206,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.999999999999998,
+            "prediction": -0.0493287593126297,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": -2.3031749725341797,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -10.972979545593262,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": -2.9635257720947266,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -10.995079040527344,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 15.0,
+            "prediction": -0.7889991998672485,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": -2.411642074584961,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -2.1191704273223877,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -11.152334213256836,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.0,
+            "prediction": -1.1889755725860596,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 16.0,
+            "prediction": -0.7390368580818176,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -13.0,
+            "prediction": -4.402554512023926,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.0,
+            "prediction": 0.11915265023708344,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.1650433540344238,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.3222765922546387,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -12.659576416015623,
+            "prediction": -1.0027713775634766,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.063827514648438,
+            "prediction": 0.1327725201845169,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -4.609931945800781,
+            "prediction": -2.40915584564209,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.6666641235351562,
+            "prediction": -2.178816795349121,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 5.0,
+            "prediction": -2.1731228828430176,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.15270401537418365,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -0.9999999999999999,
+            "prediction": -4.1755805015563965,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.07894213497638702,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 0.0,
+            "prediction": 0.07742513716220856,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": 0.06920526921749115,
+            "actual_direction": 1,
+            "prediction_direction": 1
+        },
+        {
+            "actual": -2.0,
+            "prediction": -1.6265835762023926,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -11.999999999999998,
+            "prediction": -1.5689008235931396,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": -0.2414264976978302,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -2.2126834392547607,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -6.000000000000001,
+            "prediction": -1.7260531187057495,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": -2.0848915576934814,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 3.0,
+            "prediction": -9.587158203125,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -5.440180778503418,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 6.0,
+            "prediction": -0.9122490286827087,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": -1.0380316972732544,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -9.541267395019531,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.4201632738113403,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -1.0815330743789673,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -7.645634174346924,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -0.15629981458187103,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -7.0,
+            "prediction": 0.03349752724170685,
+            "actual_direction": 0,
+            "prediction_direction": 1
+        },
+        {
+            "actual": 3.0,
+            "prediction": -5.236984729766846,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -0.9595752954483032,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.6780319213867188,
+            "prediction": -4.989343166351318,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.6401519775390625,
+            "prediction": -2.103883981704712,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 15.776519775390625,
+            "prediction": -3.655036449432373,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.8560562133789062,
+            "prediction": -6.349138259887695,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 9.280303955078125,
+            "prediction": -2.6983354091644287,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 1.8560638427734375,
+            "prediction": -1.7110275030136108,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.7121276855468754,
+            "prediction": -11.276544570922852,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.9280319213867188,
+            "prediction": -6.65378999710083,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.666664123535156,
+            "prediction": -0.538906455039978,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -6.463371276855469,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -1.6453516483306885,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -0.35731518268585205,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.41513746976852417,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -4.0,
+            "prediction": -1.127908706665039,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 2.0,
+            "prediction": -0.0718996673822403,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 4.0,
+            "prediction": -7.092137813568115,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 10.0,
+            "prediction": -4.556404113769531,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -1.8852603435516357,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -1.4228821992874146,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -0.19263134896755219,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 7.000000000000001,
+            "prediction": -6.853891849517822,
+            "actual_direction": 1,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -3.0,
+            "prediction": -0.6679077744483948,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -5.0,
+            "prediction": -5.809739112854004,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": -2.0,
+            "prediction": -0.09643705934286118,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        },
+        {
+            "actual": 0.0,
+            "prediction": -2.345712184906006,
+            "actual_direction": 0,
+            "prediction_direction": 0
+        }
+    ]
+}
